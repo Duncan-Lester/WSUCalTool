@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Class Input Form{% endblock %}
+{% block content %}
+	<h1>Please fill out what course at WSU you are interested in viewing!</h1>
+	<h2>Please note, this does NOT register you, this is just a graphic representation.</h2>
+	<form action="classform" method="post">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" value="Submit">
+	</form>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Weekly Schedule{% endblock %}
+{% block content %}
+<h1 class="text-center">{{subject}} {{crn}} at {{campus_choice}}</h1>
+
+{% csrf_token %}
+
+</div>
+<div class="text-center align-middle">
+  <a href='{{conUrl}}' class="btn btn-light" role="button">{{conUrl}}</a>
+</div>
+<div class="">
+  <div class="">
+    <container class=" d-flex flex-row ">
+      <!-- <div class="flex-fill">Hour
+        {% for hour in wsuHours %}
+        <div class="d-flex flex-column">
+          <div>{{hour}}</div>
+           fill in rows with no border on columns there should be a class
+                 stop filling in rowswhen time/60 fraction runs out? -->
+        <!-- </div> -->
+        <!-- {% endfor %} -->
+      <!-- </div> --> 
+      <div class="flex-fill" >Monday
+        {% for classtime in secDayList %}
+        {% if 'M' in classtime %}
+        {%ifchanged%}
+        <div class="card" style="background-color: #A60F2D; color: #eeeeee">
+          <div class="card-body">
+            {{classtime}}
+          </div>
+        </div>
+        {%endifchanged%}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="flex-fill">Tuesday
+        {% for classtime in secDayList %}
+        {% if "TU" in classtime %}
+        {%ifchanged%}
+        <div class="card" style="background-color: #A60F2D; color: #eeeeee">
+          <div class="card-body">
+            {{classtime}}
+          </div>
+        </div>
+        {%endifchanged%}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="flex-fill">Wednesday
+        {% for classtime in secDayList %}
+        {% if "W" in classtime %}
+        {%ifchanged%}
+        <div class="card" style="background-color: #A60F2D; color: #eeeeee">
+          <div class="card-body">
+            {{classtime}}
+          </div>
+        </div>
+        {%endifchanged%}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="flex-fill">Thursday
+        {% for classtime in secDayList %}
+        {% if "TH" in classtime %}
+        {%ifchanged%}
+        <div class="card" style="background-color: #A60F2D; color: #eeeeee">
+          <div class="card-body">
+            {{classtime}}
+          </div>
+        </div>
+        {%endifchanged%}
+        {% endif %}
+        {% endfor %}
+      </div>
+      <div class="flex-fill">Friday
+        {% for classtime in secDayList %}
+        {% if "F" in classtime %}
+        {%ifchanged%}
+        <div class="card" style="background-color: #A60F2D; color: #eeeeee">
+          <div class="card-body">
+            {{classtime}}
+          </div>
+        </div>
+        {%endifchanged%}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </container>
+  </div>
+</div>
+{% endblock %}
