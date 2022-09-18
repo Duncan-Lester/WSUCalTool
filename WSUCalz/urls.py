@@ -21,7 +21,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home),
-    path('/templates/home.html', views.home),
+    path('templates/home.html', views.home),
     path('classform', views.classform),
     #path('schedule', views.schedule),
 ]
